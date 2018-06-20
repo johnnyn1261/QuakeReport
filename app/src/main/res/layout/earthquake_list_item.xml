@@ -14,6 +14,13 @@
         tools:text="8.9"/>
 
     <TextView
+        android:id="@+id/loc_offset_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="88km N of"/>
+
+    <TextView
         android:id="@+id/location_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,5 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:text="May 6, 2018"/>
+
+    <TextView
+        android:id="@+id/time_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00 PM"/>
 
 </LinearLayout>
