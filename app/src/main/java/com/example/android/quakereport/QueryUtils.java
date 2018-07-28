@@ -40,12 +40,6 @@ public final class QueryUtils {
 
     public static ArrayList<Earthquake> extractEarthquakes(String earthquakeJSON) {
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
 
         try {

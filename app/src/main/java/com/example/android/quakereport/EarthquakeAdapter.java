@@ -22,8 +22,6 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         super(context, 0, earthquakes);
     }
 
-
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listViewItem = convertView;
