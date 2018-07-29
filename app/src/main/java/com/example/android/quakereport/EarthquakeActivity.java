@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -26,6 +27,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
 
     private EarthquakeAdapter mAdapter;
     private TextView mEmptyStateTextView;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public static final String LOG_TAG = EarthquakeActivity.class.getName();
 
@@ -81,6 +83,16 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
             loadingIndicator.setVisibility(View.GONE);
             mEmptyStateTextView.setText(R.string.no_internet);
         }
+
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
     }
 
     // Loader methods
